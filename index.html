@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Academicas</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Academicas</h1>
+        <p>A Collaborative Study App for Students</p>
+    </header>
+    <main>
+        <section id="app-description">
+            <h2>About Academicas</h2>
+            <p>Your go-to platform for collaborative learning and efficient studying. Join our community of students to create, share, and take quizzes, discuss subjects, and enhance your academic journey.</p>
+        </section>
+        <section id="login-register">
+            <div id="login">
+                <h2>Login</h2>
+                <form>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                    <button type="submit">Login</button>
+                </form>
+            </div>
+            <div id="register">
+                <h2>Register</h2>
+                <p>Create your account to get started</p>
+                <button id="register-button">Register</button>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Academicas. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.getElementById('register-button').addEventListener('click', function () {
+            // Get user input (e.g., email and password)
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+    
+            // Send a POST request to the server's registration endpoint
+            fetch('/register', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ email, password }),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the server's response (e.g., display a success message or handle errors)
+                console.log(data);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+
+        
+            // a button for registration
+            document.getElementById('register-button').addEventListener('click', function () {
+                // Redirect to the registration page
+                window.location.href = 'register.html';
+            });
+        
+        
+    </script>
+    
+
+
+</body>
+</html>

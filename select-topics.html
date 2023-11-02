@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Topics or Courses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Select Topics or Courses</h1>
+        <p>Please select a minimum of 3 topics or courses that interest you:</p>
+    </header>
+    <main>
+        <section id="topic-selection">
+            <form id="topic-form">
+                <label for="topic1">Topic 1</label>
+                <input type="checkbox" id="topic1" name="selected-topics" value="Topic 1">
+                <label for="topic2">Topic 2</label>
+                <input type="checkbox" id="topic2" name="selected-topics" value="Topic 2">
+                <label for="topic3">Topic 3</label>
+                <input type="checkbox" id="topic3" name="selected-topics" value="Topic 3">
+                <label for="topic4">Topic 4</label>
+                <input type="checkbox" id="topic4" name="selected-topics" value="Topic 4">
+                <label for="topic5">Topic 5</label>
+                <input type="checkbox" id="topic5" name="selected-topics" value="Topic 5">
+                <button type="button" id="submit-button">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Academicas. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('submit-button').addEventListener('click', function () {
+            const selectedTopics = document.querySelectorAll('input[name="selected-topics"]:checked');
+
+            if (selectedTopics.length >= 3) {
+                // TODO: Save the selected topics to the user's profile (e.g., send to the server and save in the database)
+                alert('Topics or courses selected successfully!');
+                window.location.href = 'dashboard.html'; // Redirect to the dashboard page
+            } else {
+                alert('Please select a minimum of 3 topics or courses.');
+            }
+        });
+
+        // After successfully selecting topics/courses, redirect to the dashboard page
+        window.location.href = 'dashboard.html';
+
+    </script>
+    
+</body>
+</html>
