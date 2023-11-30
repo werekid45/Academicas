@@ -75,3 +75,99 @@ footer {
     margin-top: 20px;
     color: #777;
 }
+
+
+#quiz-section, #flashcards-section {
+    margin-bottom: 20px;
+}
+
+#quiz, #flashcard {
+    border: 1px solid #ddd;
+    padding: 20px;
+    margin: 10px 0;
+    text-align: left;
+}
+
+button {
+    padding: 10px;
+    background-color: #0077B6;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #005D8E;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+header {
+    background-color: #0077B6;
+    color: #FFF;
+    padding: 20px;
+    font-size: 24px;
+}
+
+#topics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.topic {
+    background-color: #FFF;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 150px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.topic:hover {
+    background-color: #eee;
+}
+
+footer {
+    margin-top: 20px;
+    color: #777;
+}
+
+
+.topic-button {
+    display: block;
+    width: 200px; /* Adjust size as needed */
+    height: 200px;
+    margin: 20px auto; /* Centers the button */
+    background-size: cover;
+    background-position: center;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.topic-button:hover {
+    /* Optional: Style for hover effect */
+    opacity: 0.8;
+}
+
+.topic-button a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 200px; /* Adjust to button height for vertical centering */
+    text-align: center;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em; /* Adjust font size as needed */
+}
+
+

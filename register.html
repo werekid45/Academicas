@@ -14,14 +14,14 @@
     <main>
         <section id="registration-form">
             <h2>Registration</h2>
-            <form action="/register" method="post" onsubmit="return validateForm()">
+            <form>
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required>
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required>
                 <label for="confirm-password">Confirm Password:</label>
                 <input type="password" id="confirm-password" name="confirm-password" required>
-                <button type="submit">Register</button>
+                <button id="register-button" type="button">Register</button>
             </form>
         </section>
     </main>
@@ -30,17 +30,10 @@
     </footer>
 
     <script>
-        function validateForm() {
-            const password = document.getElementById('password').value;
-            const confirmPassword = document.getElementById('confirm-password').value;
-
-            if (password !== confirmPassword) {
-                alert('Passwords do not match. Please try again.');
-                return false; // Prevent the form from submitting
-            }
-
-            return true; // Allow the form to submit
-        }
+        document.getElementById('register-button').addEventListener('click', function () {
+            // Directly redirect to the dashboard page
+            window.location.href = 'dashboard.html';
+        });
     </script>
 </body>
 </html>
