@@ -15,14 +15,28 @@
         <!-- Section for taking a quiz -->
         <section id="take-quiz-section">
             <h2>Take a Quiz</h2>
-            <!-- Quiz content will be generated here -->
+            <select id="quiz-selector">
+                <!-- Options for existing quizzes will be populated here -->
+            </select>
+            <button id="start-quiz-button">Start Quiz</button>
         </section>
 
         <!-- Section for creating a quiz -->
         <section id="create-quiz-section">
             <h2>Create Your Own Quiz</h2>
             <form id="quiz-form">
-                <!-- Dynamic quiz creation form will be here -->
+                <!-- Input field for the quiz name -->
+                <label for="quiz-name-input">Quiz Name:</label>
+                <input type="text" id="quiz-name-input" name="quiz-name">
+
+                <!-- Initial question input fields -->
+                <div class="quiz-question">
+                    <label>Question:</label>
+                    <input type="text" name="question">
+
+                    <label>Answer:</label>
+                    <input type="text" name="answer">
+                </div>
             </form>
             <button id="add-question-button">Add Question</button>
             <button id="save-quiz-button">Save Quiz</button>

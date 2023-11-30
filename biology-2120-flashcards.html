@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Flashcards - Biology BIOL 2120</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Create Flashcards for Biology BIOL 2120</h1>
+    </header>
+    <main>
+        <form id="flashcard-form">
+            <div class="form-group">
+                <label for="question">Question:</label>
+                <input type="text" id="question" name="question" required>
+            </div>
+
+            <div class="form-group">
+                <label for="answer">Answer:</label>
+                <input type="text" id="answer" name="answer" required>
+            </div>
+
+            <button type="submit" class="submit-button">Create Flashcard</button>
+        </form>
+
+        <section id="created-flashcards">
+            <h2>Created Flashcards</h2>
+            <div id="flashcard-list" class="flashcard-list"></div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Academicas. All rights reserved.</p>
+    </footer>
+    <script>
+    let flashcards = [];
+
+    document.getElementById('flashcard-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const question = document.getElementById('question').value;
+        const answer = document.getElementById('answer').value;
+
+        // Create a new flashcard object and add it to the array
+        const newFlashcard = { question, answer };
+        flashcards.push(newFlashcard);
+
+        // Call function to update the display
+        updateFlashcardDisplay();
+
+        // Clear form fields
+        document.getElementById('question').value = '';
+        document.getElementById('answer').value = '';
+    });
+
+    function updateFlashcardDisplay() {
+        const flashcardList = document.getElementById('flashcard-list');
+        flashcardList.innerHTML = ''; // Clear existing list
+
+        flashcards.forEach(flashcard => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `Q: ${flashcard.question} - A: ${flashcard.answer}`;
+            flashcardList.appendChild(listItem);
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,8 +1,12 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
 const port = 3000;
-const db = require('./database'); // Import database functions
 
+// Import database functions from your database.js file
+const db = require('./database'); 
+
+app.use(cors());
 app.use(express.json());
 
 // Endpoint to register a new user
@@ -40,6 +44,8 @@ app.get('/profile/:id', (req, res) => {
         res.json(user);
     });
 });
+
+// Additional endpoints for quizzes will go here
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
